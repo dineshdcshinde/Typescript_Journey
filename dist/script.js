@@ -126,19 +126,62 @@
 // public - anyone can access
 // private - access only upto the class
 // protected - access to the class and also accessible in extends
-class chargingPoint {
-    constructor(nameOfVeh, price, isGood) {
-        this.nameOfVeh = nameOfVeh;
-        this.price = price;
-        this.isGood = isGood;
-        this.nameOfVeh = nameOfVeh,
-            this.price = price;
-    }
-    getBill() {
-        console.log(`The vehicle is ${this.nameOfVeh} and the charging amount is ${this.price}`);
-    }
-    getReviews() {
-        console.log(`the review is ${this.isGood} `);
-    }
-}
-const newChargingPoint = new chargingPoint("activa", 1299, "not to good");
+// class chargingPoint{
+//     constructor(public nameOfVeh: string, private price: number, protected isGood : string){
+//         this.nameOfVeh = nameOfVeh,
+//         this.price = price;
+//     }
+//     getBill(){
+//         console.log(`The vehicle is ${this.nameOfVeh} and the charging amount is ${this.price}`)
+//     }
+//     getReviews(){
+//         console.log(`the review is ${this.isGood} `)
+//     }
+// }
+// const newChargingPoint = new chargingPoint("activa", 1299, "not to good")
+// Day 2
+/*
+    Generic - it is the way though that we can give any value to our function or components
+                Inshort, Generic will convert the type as the input
+*/
+// 1. Generic function 
+// function getDetails<T, U> (name:T, employeeId: U){
+//     console.log(`The name of the employee is ${name} and the employeeId is ${employeeId}`)
+// }
+// getDetails("Dinesh", 20)
+// 2. Generic interface
+// interface getDetails<T, U>{
+//     name: T,
+//     _id:U
+// }
+// const employeeInfo:getDetails<string,number> = {
+//     name:"Dinesh",
+//     _id: 123
+// }
+// console.log(employeeInfo)
+// function merge<T,U>(a:T, b:U):{a:T, b:U}{
+//     return {a,b}
+// }
+// console.log(merge(1,2))
+// Generic interface 
+// interface Box<T,U=undefined>{
+//     item: T,
+//     price?: U
+// }
+// const newBox:Box <string> = {
+//     item:"watch"
+// } 
+// const parcel:Box <string, number> = {
+//     item:"Earbuds",
+//     price:2000
+// } 
+// const electronicGadgets:Box <string> = {
+//     item:"iron"
+// } 
+// console.log(newBox, parcel, electronicGadgets)
+// generic class
+// class bottleMake <T> {
+//     constructor(public key:T){}
+// }
+// const b1 = new bottleMake<string>("dinesh")
+// console.log(b1)
